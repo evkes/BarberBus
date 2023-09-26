@@ -1,0 +1,135 @@
+/* Reset some Bootstrap default styles */
+body {
+    font-family: 'Croogla 4F Bold', sans-serif;
+    background-color: #fcfad4;
+    color: #032338;
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: #054269;
+}
+
+.navbar-light .navbar-toggler-icon {
+    background-color: #fcfad4;
+}
+
+.navbar-light .navbar-toggler-icon:hover {
+    background-color: #137DC5;
+}
+
+.navbar-light .nav-link {
+    color: #fcfad4;
+}
+
+.navbar-light .nav-link:hover {
+    color: #137DC5;
+}
+
+/* Main content styles */
+.container-a {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #07619a;
+}
+
+h3 {
+    color: #07619a;
+}
+
+h6 {
+    color: #07619a;
+    font-weight: bold;
+}
+
+p {
+    color: #032338;
+}
+
+/* Button styles */
+button {
+    background-color: #137DC5;
+    color: #fcfad4;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #07619a;
+}
+
+/* Footer styles */
+.footer {
+    background-color: #054269;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.custom-card-img {
+    max-width: 250px; /* Adjust the size as per your preference */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.custom-fe-img {
+    max-width: 300px;
+    height: auto;
+}
+
+.img-logo-serv {
+    max-width: 20px; /* Adjust the size as per your preference */
+    height: auto; /* Maintain aspect ratio */
+}
+
+label {
+    color: #07619a;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #137DC5;
+    border-radius: 5px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input[type="submit"] {
+    background-color: #137DC5;
+    color: #fcfad4;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #07619a;
+}
+
+.btn-2 {
+    background-color: #137DC5;
+    color: #fcfad4;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-2:hover {
+    background-color: #07619a;
+}

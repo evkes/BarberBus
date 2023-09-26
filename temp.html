@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Your existing styles */
+        .container {
+            text-align: center;
+        }
+
+        .container > div {
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 2px solid #07619a;
+        }
+
+        .container img {
+            width: 300px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Testimonial slider styles */
+        .testimonial-slider {
+            margin-top: 40px;
+            text-align: left;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .testimonial-slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .testimonial-slide {
+            flex: 0 0 100%;
+        }
+
+        .testimonial-content {
+            padding: 20px;
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+        }
+
+        /* Navigation styles (dots and arrows) */
+        .testimonial-navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .testimonial-dots {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .testimonial-dot {
+            width: 10px;
+            height: 10px;
+            background-color: #07619a;
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .testimonial-dot.active {
+            background-color: #333;
+        }
+
+        .testimonial-arrows {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .testimonial-arrow {
+            cursor: pointer;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container container-a container-fluid mt-4 mb-4" style="text-align: center;">
+        <!-- Your existing content -->
+
+        <!-- Testimonials -->
+        <div class="testimonial-slider">
+            <div class="testimonial-slides">
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <p>BarberBus is amazing! I got the best haircut of my life right at my doorstep. The barbers are highly skilled, and the convenience is unbeatable.</p>
+                        <p class="testimonial-author">John Doe</p>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <p>I love BarberBus! It's a game-changer. No more waiting in line. I can schedule a haircut when and where I want.</p>
+                        <p class="testimonial-author">Jane Smith</p>
+                    </div>
+                </div>
+                <!-- Add more testimonials as needed -->
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <p>Outstanding service! BarberBus delivers top-notch haircuts with professionalism. I'm a loyal customer now.</p>
+                        <p class="testimonial-author">Alice Johnson</p>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <p>The app is easy to use, and the barbers are skilled. BarberBus has made my life so much easier. Highly recommended!</p>
+                        <p class="testimonial-author">Michael Brown</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Testimonial navigation (dots and arrows) -->
+        <div class="testimonial-navigation">
+            <ul class="testimonial-dots">
+                <li class="testimonial-dot active"></li>
+                <li class="testimonial-dot"></li>
+                <li class="testimonial-dot"></li>
+                <li class="testimonial-dot"></li>
+            </ul>
+            <div class="testimonial-arrows">
+                <span class="testimonial-arrow prev">&#9664;</span>
+                <span class="testimonial-arrow next">&#9654;</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript to handle testimonial slider functionality -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const slidesContainer = document.querySelector(".testimonial-slides");
+            const slides = document.querySelectorAll(".testimonial-slide");
+            const dots = document.querySelectorAll(".testimonial-dot");
+            const prevArrow = document.querySelector(".testimonial-arrow.prev");
+            const nextArrow = document.querySelector(".testimonial-arrow.next");
+
+            let currentSlide = 0;
+
+            function showSlide(index) {
+                slidesContainer.style.transform = `translateX(-${index * 100}%)`;
+                currentSlide = index;
+
+                // Update dot styles
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle("active", i === index);
+                });
+            }
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener("click", () => {
+                    showSlide(index);
+                });
+            });
+
+            prevArrow.addEventListener("click", () => {
+                if (currentSlide > 0) {
+                    showSlide(currentSlide - 1);
+                }
+            });
+
+            nextArrow.addEventListener("click", () => {
+                if (currentSlide < slides.length - 1) {
+                    showSlide(currentSlide + 1);
+                }
+            });
+
+            // Auto-advance the slider (optional)
+            function autoAdvance() {
+                if (currentSlide < slides.length - 1) {
+                    showSlide(currentSlide + 1);
+                } else {
+                    showSlide(0);
+                }
+            }
+
+            setInterval(autoAdvance, 5000); // Change slide every 5 seconds (adjust as needed)
+        });
+    </script>
+</body>
+</html>
